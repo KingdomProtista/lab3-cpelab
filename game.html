@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha256-NuCn4IvuZXdBaFKJOAcsU2Q3ZpwbdFisd5dux4jkQ5w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.5.6/css/ionicons.min.css" integrity="sha256-kx16nUTlNRyEpdk7cvpnqblbDbTe/nADul9o2uYeGSw=" crossorigin="anonymous" />
+    <!-- Theme style -->
+  <link rel="stylesheet" href="./dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="./dist/css/skins/_all-skins.min.css">
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <!-- Site wrapper -->
+<div class="wrapper">
+
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="/" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>C</b>PE</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Profile</b>CPE</span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+      </nav>
+    </header>
+  
+    <!-- =============================================== -->
+  
+    <!-- Left side column. contains the sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="./dist/img/ma pic.jpg" class="img-circle" alt="User Image">
+          </div>
+          <div class="pull-left info">
+            <p>CPE ENG</p>
+          </div>
+        </div>
+        <!-- search form -->
+        <form action="#" method="get" class="sidebar-form">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+                  <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                  </button>
+                </span>
+          </div>
+        </form>
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu" data-widget="tree">
+          <li>
+            <a href="index.html">
+              <i class="fa fa-dashboard"></i> <span>INDEX</span>
+            </a>
+          </li>
+          <li>
+            <a href="gallery.html">
+              <i class="fa fa-picture-o"></i> <span>GALLERY</span>
+            </a>
+          </li>
+          <li>
+            <a href="contact.html">
+              <i class="fa fa-volume-control-phone"></i> <span>CONTACT</span>
+            </a>
+          </li>
+          <li>
+            <a href="game.html">
+              <i class="fa fa-gamepad"></i> <span>GAME</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+  
+    <!-- =============================================== -->
+  
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+  
+      <!-- Main content -->
+      <section class="content">
+        <div class="box box-primary">
+                  <h1 align="center">Number guessing game</h1>
+                  <br>
+                  <p align="center">We have selected a random number between 1 and 100 See if you can guess it in 10 turns or less We'll tell you if your guess was too high or too low</p>
+                  <div align="center">
+                    <form action="#">     
+                      <input type="text" id="number">
+                      <input id="submit" type="button" onclick="getInput(event)" value="Submit" class="btn btn-primary">
+                      <div id="worng" class="alert" style="display:none" align="center">
+                      </div>
+                    </form>
+                  </div>
+                  <br>
+                  <p id="incorrectanswer" align="center" style="display: none"> Previous answer:</p>
+                  <div>
+                      <p id="correctanswer" align="center"></p>
+                  </div>
+                  <div align="center">
+                      <i id="icon-highlow"></i><span id="highlow" ></span>
+                  </div>
+              
+      
+              <div id="end" align="center" style="display: none">
+                  <button type="button" onclick="repage()" class="btn btn-success">Start new game</button>
+              </div>
+              <br>
+            <!-- /.box -->
+        </div>
+          <div class="info-box bg-aqua">
+            <span class="info-box-icon"><i class="fa fa-clock-o"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">attempt</span>
+              <span id="attempt" class="info-box-number"></span>
+
+              <div class="progress">
+                <div id="bar" class="progress-bar" style="width: 0%"></div>
+              </div>
+                  <span id="progress" class="progress-description"></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>  
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+  
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        <b>SiwakornS</b>
+      </div>
+      <strong>Copyright &copy; 2020 <a href="#">Faculity of Engineering</a>.</strong>
+    </footer>
+  
+
+<!-- ./wrapper -->
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"
+integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+crossorigin="anonymous">
+  </script>
+  <!-- Jquery -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.min.js" 
+  integrity="sha256-qE/6vdSYzQu9lgosKxhFplETvWvqAAlmAuR+yPh/0SI=" crossorigin="anonymous">
+  </script>
+  <!-- slimscroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js" 
+  integrity="sha256-t6SrqvTQmKoGgi5LOl0AUy+lBRtIvEJ+++pLAsfAjWs=" crossorigin="anonymous">
+  </script>
+  <!-- fastclick -->
+  <script src="./dist/js/adminlte.min.js"></script>
+  <script src="./dist/js/demo.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
