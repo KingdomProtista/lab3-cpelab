@@ -26,6 +26,7 @@ function checkcondition() {
         worng.textContent="Please Input number ."
         incorrectid.style.display = "none";
         correctid.style.display = "none";
+        document.getElementById('icon-highlow').className="";
         document.getElementById('highlow').textContent = "";
         return
     }
@@ -34,6 +35,7 @@ function checkcondition() {
         worng.textContent="Number less than 1"
         incorrectid.style.display = "none";
         correctid.style.display = "none";
+        document.getElementById('icon-highlow').className="";
         document.getElementById('highlow').textContent = "";
         return
     }
@@ -42,6 +44,7 @@ function checkcondition() {
         worng.textContent="Number more than 100"
         incorrectid.style.display = "none";
         correctid.style.display = "none";
+        document.getElementById('icon-highlow').className="";
         document.getElementById('highlow').textContent = "";
         return
     }
